@@ -1,0 +1,33 @@
+.Weather {
+  font-family: "Open Sans Condensed", sans-serif;
+}
+.Weather .details-weather {
+  list-style: none;
+  font-size: 14px;
+  line-height: 40%;
+  margin-top: 30px;
+  margin-left: 40px;
+  text-align: left;
+}
+.Weather .current-temperature {
+  font-family: "Open Sans Condensed", sans-serif;
+  margin-top: -30px;
+  font-size: 100px;
+  margin-left: 0%;
+  text-align: left;
+  color: #e9967a;
+}
+
+.Weather .weather-icon {
+  margin-top: -40px;
+  margin-left: 0px;
+  max-width: 120px;
+}
+
+.weather-description {
+  margin-left: 35px;
+  margin-top: 0px;
+}
+.weather-text:first-letter {
+  text-transform: uppercase;
+}

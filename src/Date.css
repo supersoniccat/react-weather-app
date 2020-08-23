@@ -1,0 +1,25 @@
+.Date {
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+.Date .weather-app-icon {
+  align-content: flex-end;
+  margin-top: 35px;
+  margin-left: 45px;
+  max-width: 100%;
+}
+.Date .date,
+.hours {
+  text-align: justify;
+  margin-left: 35px;
+}
+.Date .date {
+  font-size: 15px;
+  font-weight: 900;
+  margin-top: 0%;
+}
+.Date .hours {
+  font-size: 20px;
+  margin-top: -15%;
+  margin-bottom: 0px;
+}

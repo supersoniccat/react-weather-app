@@ -1,0 +1,15 @@
+.Forecast .hourbox {
+  border-radius: 0px;
+  max-width: 200%;
+}
+.Forecast .hourforecast {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 15px;
+  border-radius: 5px;
+  background-color: #3f3d5679;
+  max-width: 100px;
+  padding: 10px;
+  color: #e6e6e6;
+  text-align: center;
+  text-transform: uppercase;
+}

@@ -1,0 +1,7 @@
+.Units .weather-unit {
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 5px;
+}

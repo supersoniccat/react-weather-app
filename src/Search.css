@@ -1,0 +1,11 @@
+.Search .search-button {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+.Search i {
+  color: #e9967a;
+  height: 20px;
+}
