@@ -49,7 +49,7 @@ export default function App() {
         </div>
       </div>
       <p class="disclaimer">
-        <a href="https://github.com/supersoniccat/Weather-app">
+        <a href="https://github.com/supersoniccat">
           Open-sourced code{" "}
         </a>
         by Cátia Santos 👩‍💻
