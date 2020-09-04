@@ -29,10 +29,10 @@ export default function App() {
             <Date />
           </div>
           <div className="col-8">
-            <City />{" "}
+            <City defaultCity="Aveiro"/>{" "}
           </div>
         </div>
-        <Weather />
+        <Weather defaultCity="Aveiro"/>
         <div className="row">
           <div className="w-100" />
           <div className="col more-info">
