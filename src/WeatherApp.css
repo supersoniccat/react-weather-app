@@ -8,16 +8,22 @@
   background-image: linear-gradient(to top, #badefa 12%, #d1e0e6fd 50%);
 }
 
-.Search .search-button {
+ .search-button {
   background-color: Transparent;
   background-repeat: no-repeat;
   border: none;
   cursor: pointer;
   overflow: hidden;
 }
-.Search i {
+i {
   color: #e9967a;
   height: 20px;
+}
+
+.form-search {
+  border: 1px;
+  border-radius: 4px;
+
 }
 .local-city {
   font-family: "Open Sans Condensed", sans-serif;

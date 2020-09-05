@@ -25,8 +25,8 @@ function changeCity(event){
           <div className="col-6">
           <div className="Search">
             <form className="search-city-bar" onSubmit={handleSubmit}>
-              <input type="search" className="city-search-input"  placeholder="Search City" onChange={changeCity}/>
-                <button type="submit" className="search-button" >
+              <input type="search" className="form-search"  autoFocus="on" placeholder="Enter a city..." onChange={changeCity}/>
+                <button type="submit" className="search-button" value="Search">
                   <i className="fas fa-search" />
                 </button>
             </form>
