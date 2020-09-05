@@ -24,10 +24,10 @@
   max-width: 150px;
 }
 
-.weather-description {
+.DetailsWeather-description {
   margin-left: 35px;
   margin-top: 0px;
 }
-.weather-text:first-letter {
+.DetailsWeather-text:first-letter {
   text-transform: uppercase;
 }
