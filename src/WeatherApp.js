@@ -1,23 +1,45 @@
 import React, { useState } from "react";
 import "./WeatherApp.css";
+import Axios from "axios";
 
+import City from "./City";
 import Units from "./Units";
 import Date from "./Date";
 import DetailsWeather from "./DetailsWeather";
 import Forecast from "./Forecast";
 
 export default function WeatherApp(props) {
-  let [city, setCity] = useState(props.defaultCity);
+  const [city, setCity] = useState(props.defaultCity);
+  const [weatherData, setweatherData] = useState ({ready:false});
 
-function handleSubmit(event){
-event.preventdefault()
+  function getWeather(response){
+    setweatherData({
+      ready: true,
+      temperature: Math.round(response.data.main.temp),
+      humidity: Math.round(response.data.main.humidity),
+      wind: Math.round(response.data.wind.speed),
+      details: response.data.weather[0].description,
+      icon: response.data.weather[0].icon,
+    });
+  
+  }
 
-function changeCity(event){
- setCity(event.target.value);
-}
+  function handlecityChange(event){
+    setCity(event.target.value);
+  }
 
+  function handleSubmit(event){
+    event.preventDefault();
+    search();
+  }
 
-}
+  function search(){
+  let apiKey = "17d06d43acb662bf5676f18abd245c58";
+let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+Axios.get(apiUrl).then(getWeather);   
+  }
+
+  if (weatherData.ready = true) 
   return (
        <div className="weather-app-wrapper">
         <div className="row">
@@ -25,7 +47,7 @@ function changeCity(event){
           <div className="col-6">
           <div className="Search">
             <form className="search-city-bar" onSubmit={handleSubmit}>
-              <input type="search" className="form-search"  autoFocus="on" placeholder="Enter a city..." onChange={changeCity}/>
+              <input type="search" className="form-search"  autoFocus="on" placeholder="Enter a city..." onChange={handlecityChange}/>
                 <button type="submit" className="search-button" value="Search">
                   <i className="fas fa-search" />
                 </button>
@@ -44,12 +66,12 @@ function changeCity(event){
           <div className="col-8">
           <div className="City">
       <h1 class="local-city" id="city">
-        {city}
+        <City city ={city}/>
       </h1>
     </div>
           </div>
         </div>
-        <DetailsWeather defaultCity="Aveiro"/>
+        <DetailsWeather data={weatherData}/>
         <div className="row">
           <div className="w-100" />
           <div className="col more-info">
