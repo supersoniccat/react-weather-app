@@ -13,13 +13,13 @@ export default function WeatherApp(props) {
   function getWeather(response){
     setweatherData({
       ready: true,
+      date: new Date (response.data.dt * 1000),
+      city: response.data.name,
       temperature: Math.round(response.data.main.temp),
       humidity: Math.round(response.data.main.humidity),
       wind: Math.round(response.data.wind.speed),
       details: response.data.weather[0].description,
-      icon: response.data.weather[0].icon,
-      city: response.data.name,
-      date: new Date(response.Data.dt*1000),
+      icon: response.data.weather[0].icon,      
     });
   }
 

@@ -2,6 +2,36 @@ import React from "react";
 import "./Date.css";
 
 export default function Date(props) {
+  let days = [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat"
+  ];
+
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+
+  let day = days[props.date.getDay()];
+  let month = months[props.date.getMonth()];
+  let hour = [props.date.getHours()];
+  let minutes = [props.date.getMinutes()];
+
 
 
   return (
@@ -12,10 +42,10 @@ export default function Date(props) {
         class="weather-app-icon"
       />
       <p class="date" id="current-date">
-        Sun, August 23
+        {day}, {month} 6
       </p>
       <p class="hours" id="current-hours">
-        12:00
+        {hour}:{minutes}
       </p>
     </div>
   );
