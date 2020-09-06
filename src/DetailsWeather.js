@@ -1,11 +1,22 @@
 import React from "react";
 import "./DetailsWeather.css";
 
+import Date from "./Date";
+import City from "./City";
+
 
 export default function DetailsWeather(props) {
 
   return (
     <div className="Weather">
+      <div className="row">
+        <div className="col-4">
+          <Date />
+        </div>
+        <div className="col-8">
+          <City city ={props.data.city}/>
+        </div>
+      </div>
       <div className="row">
         <div className="col-4">
           <div className="details-weather">
