@@ -11,7 +11,7 @@ export default function DetailsWeather(props) {
     <div className="Weather">
       <div className="row">
         <div className="col-4">
-          <Date />
+          <Date date={props.data.date}/>
         </div>
         <div className="col-8">
           <City city ={props.data.city}/>

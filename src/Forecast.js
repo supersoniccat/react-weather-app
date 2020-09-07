@@ -1,24 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Forecast.css";
+import Axios from "axios";
+import ForecastPreview from "./ForecastPreview";
+
 
 export default function Forecast(props) {
-  return (
-    <div className="Forecast">
-      <div className="col-2 hourbox">
-        <div className="hourforecast">
-          {props.hour}
-          <br />
-          <img
-            src="images/iconfinder_weather_2_2682849.png"
-            alt="weather icon"
-            width="30px;"
-          />
-          <p>
-            <span className="MaxT">{props.maxT}</span>º |{" "}
-            <span className="MinT">{props.minT}</span>º
-          </p>
-        </div>
-      </div>
-    </div>
-  );
+
+  const [loaded, setloudedForecast] = useState (false);
+  const [forecast, setForecast] = useState(null);
+
+
+  function getForecast(response){
+    setForecast (response.data);
+    setloudedForecast (true);
+  }
+
+    if (loaded && props.city === forecast.city.name) {
+    return (
+      <div className="WeatherForecast row">
+        <ForecastPreview  data={forecast.list[0]} />
+      </div>);  
+  } else {
+    let apiKey = "17d06d43acb662bf5676f18abd245c58";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&units=metric&appid=${apiKey}`;
+    Axios.get(apiUrl).then(getForecast);
+
+  } return null;
 }

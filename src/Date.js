@@ -29,8 +29,11 @@ export default function Date(props) {
 
   let day = days[props.date.getDay()];
   let month = months[props.date.getMonth()];
+  let date = [props.date.getDate()];
   let hour = [props.date.getHours()];
-  let minutes = [props.date.getMinutes()];
+  if (hour <10){ hour = `0${hour}`};
+  let minutes = [props.date.getMinutes()] 
+  if (minutes<10) { minutes = `0${minutes}`};
 
 
 
@@ -42,7 +45,7 @@ export default function Date(props) {
         class="weather-app-icon"
       />
       <p class="date" id="current-date">
-        {day}, {month} 6
+        {day}, {month} {date}
       </p>
       <p class="hours" id="current-hours">
         {hour}:{minutes}

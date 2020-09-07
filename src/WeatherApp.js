@@ -62,11 +62,7 @@ export default function WeatherApp(props) {
           <div className="w-100" />
         </div>
         <div className="row justify-content-center">
-          <Forecast hour="15:00" maxT={28} minT={27} />
-          <Forecast hour="18:00" maxT={32} minT={31} />
-          <Forecast hour="21:00" maxT={30} minT={29} />
-          <Forecast hour="00:00" maxT={28} minT={27} />
-          <Forecast hour="03:00" maxT={26} minT={25} />
+         <Forecast data={weatherData.city}/>
         </div>
       </div>
     
