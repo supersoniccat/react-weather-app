@@ -42,12 +42,12 @@ export default function Date(props) {
       <img
         src="images\undraw_weather_app_i5sm (1).svg"
         alt="icon"
-        class="weather-app-icon"
+        className="weather-app-icon"
       />
-      <p class="date" id="current-date">
+      <p className="date" id="current-date">
         {day}, {month} {date}
       </p>
-      <p class="hours" id="current-hours">
+      <p className="hours" id="current-hours">
         {hour}:{minutes}
       </p>
     </div>
