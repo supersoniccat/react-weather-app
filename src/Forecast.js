@@ -5,20 +5,23 @@ import ForecastPreview from "./ForecastPreview";
 
 
 export default function Forecast(props) {
-
   const [loaded, setloudedForecast] = useState (false);
   const [forecast, setForecast] = useState(null);
 
 
   function getForecast(response){
-    setloudedForecast (true);
-    setForecast (response.data);
+        setForecast (response.data);
+        setloudedForecast (true);
   }
 
     if (loaded && props.city === forecast.city.name) {
     return (
       <div className="WeatherForecast row">
         <ForecastPreview  data={forecast.list[0]} />
+        <ForecastPreview  data={forecast.list[1]} />
+        <ForecastPreview  data={forecast.list[2]} />
+        <ForecastPreview  data={forecast.list[3]} />
+        <ForecastPreview  data={forecast.list[4]} />
       </div>);  
   } else {
     let apiKey = "17d06d43acb662bf5676f18abd245c58";

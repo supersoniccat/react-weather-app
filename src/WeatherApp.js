@@ -62,7 +62,7 @@ export default function WeatherApp(props) {
           <div className="w-100" />
         </div>
         <div className="row justify-content-center">
-         <Forecast data={weatherData.city}/>
+         <Forecast city={weatherData.city} />
         </div>
       </div>
     
