@@ -25,6 +25,13 @@ i {
   border-radius: 4px;
 
 }
+.weather-unit {
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 5px;
+}
 .local-city {
   font-family: "Open Sans Condensed", sans-serif;
   margin-top: 85px;
