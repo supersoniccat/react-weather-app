@@ -10,7 +10,6 @@ export default function WeatherApp(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [weatherData, setweatherData] = useState ({ready:false});
   const [unit, setUnit] = useState("celsius");
-  
 
   function showFahrenheit(event) {
     event.preventDefault();
@@ -21,35 +20,21 @@ export default function WeatherApp(props) {
     event.preventDefault();
     setUnit("celsius");
   }
+
   
-  function getWeather(response){
-    let celTemp = Math.round(response.data.main.temp);
-    let fahrTemp = (celTemp * 9) / 5 + 32;
-    
-    if (unit === "celsius") {
+  function getWeather(response) {
     setweatherData({
       ready: true,
-      date: new Date (response.data.dt * 1000),
+      date: new Date(response.data.dt * 1000),
       city: response.data.name,
       temperature: Math.round(response.data.main.temp),
       humidity: Math.round(response.data.main.humidity),
       wind: Math.round(response.data.wind.speed),
       details: response.data.weather[0].description,
-      icon: response.data.weather[0].icon,      
-    });
-  } else {
-    setweatherData({
-      ready: true,
-      date: new Date (response.data.dt * 1000),
-      city: response.data.name,
-      temperature: fahrTemp,
-      humidity: Math.round(response.data.main.humidity),
-      wind: Math.round(response.data.wind.speed),
-      details: response.data.weather[0].description,
-      icon: response.data.weather[0].icon,      
+      icon: response.data.weather[0].icon,
     });
   }
-}
+
 
   function handleSubmit(event){
     event.preventDefault();
@@ -96,7 +81,7 @@ export default function WeatherApp(props) {
     </div>
           </div>
         </div>
-        <DetailsWeather data={weatherData}/>
+        <DetailsWeather data={weatherData} unit={unit}/>
         <div className="row">
           <div className="w-100" />
           <div className="col more-info">
@@ -105,7 +90,7 @@ export default function WeatherApp(props) {
           <div className="w-100" />
         </div>
         <div className="row justify-content-center">
-         <Forecast city={weatherData.city} />
+         <Forecast city={weatherData.city} unit={unit}/>
         </div>
       </div>
     
